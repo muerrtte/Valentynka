@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виртуальная Валентинка 💖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+<style>
+    
+    @import url(https://fonts.googleapis.com/css?family=Pacifico);
+body{
+  background: rgba(103, 58, 183, 0.7);
+  font-family: 'Pacifico', cursive;
+  overflow: hidden;
+  color: #fff;
+}
+.bgoverlay{
+  background: rgba(103,58,183,0.7);
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.container{
+  position: relative;
+  margin: 120px auto 0 auto;
+  width: 320px;
+}
+
+
+.ico{
+  display: block;
+  width: 320px;
+  height: 320px;
+}
+.open .ico{
+  animation: open 3s;
+  transform: scale(10);
+}
+.ico .title{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -110px;
+  margin-top: -60px;
+  z-index: 4;
+  font-size: 39px;
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+.open .ico .title{
+  opacity: 0;
+  transition: all 0.3s ease;
+  top:-100px;
+}
+.ico:before,
+.ico:after,
+.ico2:before,
+.ico2:after{
+  position: absolute;
+  top:0;
+  left:0;
+}
+.ico:before,
+.ico:after,
+.ico2:before,
+.ico2:after{
+  display: block;
+  font-size: 20em;
+  color: #ff4081;
+  content: "\f004";
+  font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ico2:before,
+.ico2:after{
+  color: #e91e63;
+}
+.ico:before{
+  z-index: 3;
+}
+.ico:after{
+  animation: explode 4s infinite;
+}
+
+
+.ico2:before{
+  animation: explodeSmall 3s infinite;
+}
+.ico2:after{
+  animation: explodeSmall 2s infinite;
+}
+
+
+.endtext{
+  opacity:0;
+  position: absolute;
+  top:-100px;
+  width:100%;
+}
+.open .endtext{
+  top:0;
+  opacity: 1;
+  animation: show 2s;
+}
+.endtext .close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.endtext h1,
+.endtext h2,
+.endtext h3{
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  text-align: center;
+  font-weight: normal;
+}
+.endtext h1{
+  font-size: 50px;
+}
+.endtext h2{
+  font-size: 30px;
+}
+.endtext h3{
+  font-size: 20px;
+}
+.images{
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.image2{
+  top: -50px;
+  left: -60px;
+  transform: rotate(-20deg);
+}
+
+
+.images .image{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+.imageWrapper {
+  width: 100%; /* Make all image wrappers take full width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%; /* Ensure all images take up the full width of the wrapper */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Crop the image to fit */
+}
+
+.open .images{
+  opacity: 1;
+  animation: showImages 3s;
+}
+.image-container {
+  position: relative;
+  width: 380px;
+}
+
+
+@keyframes explode {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+}
+@keyframes explodeSmall {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+}
+
+
+@keyframes open {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(10);
+    }
+}
+
+@keyframes showImages {
+    from {
+      opacity: 0;
+      top: -200px;
+    }
+    to {
+      opacity: 1;
+      top:0;
+    }
+}
+
+@keyframes show {
+    from {
+      opacity: 0;
+      top: -100px;
+    }
+    to {
+      opacity: 1;
+      top:0;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Happy Valentines day Codepen! -->
+<div class="bgoverlay">
+    <div class="container">
+      <span class="ico">
+        <span class="ico2"></span>
+        <span class="title">Нажми меня</span>
+      </span>
+      <div class="endtext">
+        <span class="close" title="Restart"><i class="fa fa-times"></i></span>  
+        <h1>Я тебя люблю</h1>
+      </div>
+      <div class="images">
+        <div class="image-container">
+            <div class="imageWrapper">
+              <img src="images/1.jpg" class="image image1" alt="">
+            </div>
+            <div class="imageWrapper">
+              <img src="images/2.jpg" class="image" alt="">
+            </div>
+            <div class="imageWrapper">
+              <img src="images/3.jpg" class="image" alt="">
+            </div>
+            <div class="imageWrapper">
+              <img src="images/4.jpg" class="image" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", (event) => {
+      document.querySelector('.title').addEventListener('click', function(){
+        document.querySelector('.container').classList.add('open');
+      });
+    
+    document.querySelector('.close').addEventListener('click', function(){
+      document.querySelector('.container').classList.remove('open');
+      });
+    });
+  </script>
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.image-container').slick({
+      });
+    });
+  </script>
+</body>
+</html>
